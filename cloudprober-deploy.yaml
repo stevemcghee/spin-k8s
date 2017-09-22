@@ -1,0 +1,84 @@
+apiVersion: apps/v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cloudprober
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cloudprober
+    spec:
+      containers:
+      - name: cloudprober
+        image: cloudprober/cloudprober:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 9313
+        volumeMounts:
+          - name: cloudprober-config-volume
+            mountPath: /etc/
+      volumes:
+        - name: cloudprober-config-volume
+          configMap:
+            name: cloudprober-config
+
+# ./cloudprober --config_file /tmp/cloudprober.cfg
+# or docker run --net host -v /tmp/cloudprober.cfg:/etc/cloudprober.cfg cloudprober/cloudprober
+# It will also start a Prometheus exporter at: http://localhost:9313
+# requires access to internet
+---
+apiVersion: v1beta1 # for versions before 1.6.0 use extensions/v1beta1
+kind: ConfigMap
+metadata:
+ Name: cloudprober-config
+ data:
+   config_file: |
+    probe {
+      name: "google_homepage"
+      type: HTTP
+      targets {
+        host_names: "www.google.com"
+      }
+      interval_msec: 5000  # 5s
+      timeout_msec: 1000   # 1s
+    }
+
+    # from https://www.spinnaker.io/guides/tutorials/codelabs/gcp-kubernetes-source-to-prod/
+    probe {
+      name: "hello_staging"
+      type: HTTP
+      targets {
+        host_names: "http://35.184.141.203/"
+      }
+      interval_msec: 5000  # 5s
+      timeout_msec: 1000   # 1s
+    }
+    probe {
+      name: "hello_prod"
+      type: HTTP
+      targets {
+        host_names: "http://130.211.192.255/"
+      }
+      interval_msec: 5000  # 5s
+      timeout_msec: 1000   # 1s
+    }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cloudprober
+  name: cloudprober
+spec:
+  ports:
+  - name: 9313-9313
+    port: 9313
+    protocol: TCP
+    targetPort: 9313
+  selector:
+    app: cloudprober
+  type: LoadBalancer
