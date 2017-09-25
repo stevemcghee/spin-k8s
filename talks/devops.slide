@@ -1,0 +1,68 @@
+FutureProd
+
+Steve McGhee
+Cloud Wonk, Mindbody
+steve.mcghee@mindbodyonline.com
+stevemcghee@
+
+25 Sept, 2017
+
+* Clouds
+- Rent someone else's server instead of buying/running our own. Got it.
+- _Really:_ super-fast deployments or whatever.
+- _Really_Really:_ experimentation goes from expensive to free. Science happens.
+.image images/nocloud.jpg _ 200
+
+* Kubernetes is what?
+
+<voice>imagine a world...</voice>
+- ephemeral copies of production: spin up, tear down in minutes.
+- "jobs" run on "cron" can be arbitrarily-sized.
+- mapreduce!
+
+* CI/CD
+- I've heard of that and I want it.
+- Code Repositories
+- Container Registries
+- Kubernetes Clusters
+- Service Ingresses, Load Balancer, Internal Load Balancer
+- ...
+- Profit!
+
+* .yaml
+.code busybox.yaml
+.code ../gcp-cd-codelab/cloudbuild.yaml
+
+* Tiny Example
+.code ../gcp-cd-codelab/main.go
+
+* DEMO
+.link https://github.com/stevemcghee/gcp-cd-codelab/blob/release/main.go code on GitHub
+.link https://console.cloud.google.com/gcr/images/kubetest-mindbody?project=kubetest-mindbody&authuser=1 Container Registry
+.link http://localhost:9000/#/applications/codelab/executions Spinnaker
+.link https://console.cloud.google.com/logs/viewer?project=kubetest-mindbody&authuser=1&minLogLevel=0&expandAll=false&timestamp=2017-09-22T23:34:47.000000000Z&resource=container%2Fcluster_name%2Fnextgen-test1%2Fnamespace_id%2Fdefault&filters=text:cloudprober logs
+
+.link http://35.184.141.203/ staging
+.link http://130.211.192.255/ prod
+
+* What is Istio, then?
+- k8s is for defining _where_ your services live and _what_ they are made of
+- istio (a 'service mesh') defines _how_ it interacts with other services
+.link istio.io istio.io: docs etc
+.caption "An open platform to connect, manage, and secure microservices"
+- routing, loadshedding, monitoring, policy enforcement.
+- thanks to infinite tiny proxies everywhere.
+- sidecar model
+
+- Totally not ready yet.  Please hold.
+
+* What are those Archs doing, exactly?
+- what would it take for a small nimble startup to take our entire business?
+- guess: 10 developers for 1 year could make a serious impact.
+- our moat is our existing relationships. whew.
+- how about we just take that position, build the new thing
+- and then just give _ourselves_ our customers.
+
+- architects are building the templates for that internal tranformation.
+- So, 2020? Sure, we can call it that.
+
