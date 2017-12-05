@@ -5,7 +5,22 @@ Cloud Wonk, Mindbody
 steve.mcghee@mindbodyonline.com
 stevemcghee@
 
-25 Sept, 2017
+26 Sept, 2017
+
+* % whoami
+
+- Steve, from the bay area, lived in England a bunch, worked at Google as an SRE for the past ~12 years, the past few on Compute Engine (the VM thing, like EC2)
+- 2 kids: boys 7 and 9.
+- Living out of a suitcase in a rental in SLO, still waiting to move into my house.
+
+* Why Am I in Irvine?
+
+1) To meet you folks, so future interactions work better. <anecdote/>
+2) To talk about the Wellness Project, namely what baseline measurements we can develop to help NOC
+   differentiate problems from false-positives during outages.
+3) (Also Wellness Project) to discuss "when people can/should/do touch prod and why?" -- spreadsheet
+   and what comes next.
+4) Silos < Bridges!
 
 * Clouds
 - Rent someone else's server instead of buying/running our own. Got it.
