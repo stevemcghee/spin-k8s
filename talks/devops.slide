@@ -17,7 +17,7 @@ stevemcghee@
 
 <voice>imagine a world...</voice>
 - ephemeral copies of production: spin up, tear down in minutes.
-- "jobs" run on "cron" can be arbitrarily-sized.
+- "jobs" run on "cron" can be arbitraritly-sized.
 - mapreduce!
 
 * CI/CD
@@ -31,11 +31,11 @@ stevemcghee@
 
 * .yaml
 .code ../busybox.yaml
-.code https://github.com/stevemcghee/gcp-cd-codelab/blob/release/cloudbuild.yaml
+[[https://github.com/stevemcghee/gcp-cd-codelab/blob/release/cloudbuild.yaml]]
 
 * Tiny Example
 .code ../../gcp-cd-codelab/main.go
-.code https://github.com/stevemcghee/gcp-cd-codelab/blob/release/main.go
+[[https://github.com/stevemcghee/gcp-cd-codelab/blob/release/main.go]]
 
 * DEMO
 .link https://github.com/stevemcghee/gcp-cd-codelab/blob/release/main.go code on GitHub
