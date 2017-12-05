@@ -34,7 +34,6 @@ stevemcghee@
 [[https://github.com/stevemcghee/gcp-cd-codelab/blob/release/cloudbuild.yaml]]
 
 * Tiny Example
-.code ../../gcp-cd-codelab/main.go
 [[https://github.com/stevemcghee/gcp-cd-codelab/blob/release/main.go]]
 
 * DEMO
