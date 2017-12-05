@@ -1,0 +1,31 @@
+MB2020 POC v1 - CD demo
+
+6 December, 2017
+Software Architects, MINDBODY
+
+* Overview
+- Super basic functionality:
+  - Book an appointment from phone/desktop calendar app
+  - Find that appointment on web, based on text search
+
+* Deployment Speed
+- Continuous Deployment (CD)
+  - Continuous Integration (CI) coming soon
+- Write code, pass tests, build container, done.
+- Automatically pushed to -dev
+- Manually approve push to -prod
+
+* Demo Time
+- [[http://web-dev.poc.mindbodyonline.com/search]]
+- [[http://web.poc.mindbodyonline.com/search]]
+
+* Effort So Far
+- This is the result of ~3 Architects in their "spare time"
+- Rob: (calendar, business service): ~500 lines of code @ 50% for 2 weeks
+.link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/Mindbody.POC.BusinessConfiguration Mindbody.POC.BusinessConfiguration
+- Blake: (UI, Search): 1500 lines of code @ 50% time for 2 weeks 
+.link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/Mindbody.POC.Search Mindbody.POC.Search
+.link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/Mindbody.POC.WebClient Mindbody.POC.WebClient
+.link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/Mindbody.POC.Worker.Search Mindbody.POC.Worker.Search
+- Steve (software infra):  0 lines of actual code, maybe 300 lines of config @ 50% time for 2 months.
+.link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/POC.Infra.v1 POC.Infra.v1
