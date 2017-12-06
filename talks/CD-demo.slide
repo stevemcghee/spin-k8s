@@ -53,5 +53,6 @@ Software Architects, MINDBODY
 
 * Appendix
 [[http://spinnaker-ui.poc.mindbodyonline.com/#/projects/poc%20Dev-%3EProd/applications/webclient/clusters][Spinnaker webclient clusters]]
-[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-dev?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][webclient-dev]]
-[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-prod?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][webclient-prod]]
+[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-dev?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][gke: webclient-dev]]
+[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-prod?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][gke: webclient-prod]]
+[[http://104.197.99.77:8008/calendars/users/admin/calendar/][calendar raw]]
