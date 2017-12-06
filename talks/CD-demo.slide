@@ -8,16 +8,14 @@ Software Architects, MINDBODY
   - Book an appointment from phone/desktop calendar app
   - Find that appointment on web, based on text search
 
-* Deployment Speed
-- Continuous Deployment (CD)
-  - Continuous Integration (CI) coming soon
-- Write code, pass tests, build container, done.
-- Automatically pushed to -dev
-- Manually approve push to -prod
 
 * Demo Time
+- Book on phone
+- Book on iCal (desktop)
 - [[http://web-dev.poc.mindbodyonline.com/search]]
 - [[http://web.poc.mindbodyonline.com/search]]
+- [[http://spinnaker-ui.poc.mindbodyonline.com/#/applications/webclient/executions][Spinnaker UI]] - Pipelines / Approval
+- [[https://mb2020.slack.com/messages/C7TE6FGSY/][Slack Notifications]] Change Log / Call for Approval
 
 * Effort So Far
 - This is the result of ~3 Architects in their "spare time"
@@ -29,3 +27,31 @@ Software Architects, MINDBODY
 .link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/Mindbody.POC.Worker.Search Mindbody.POC.Worker.Search
 - Steve (software infra):  0 lines of actual code, maybe 300 lines of config @ 50% time for 2 months.
 .link https://tfs.mindbodyonline.com/tfs/MBCollection/Architecture/_git/POC.Infra.v1 POC.Infra.v1
+
+- Totally independent work, tied together on the last day.
+
+* Code we Didn't Write
+- calendar server - 500k lines of tested code (from Apple, now OpenSource)
+- calendar client (phone, desktop)
+- k8s, loadbalancing
+
+* Deployment Speed = Agility
+- Continuous Deployment (CD)
+  - Continuous Integration (CI) coming soon
+- Write code, pass tests, build container, done.
+- Automatically pushed to -dev
+- Manually approve push to -prod
+
+* Cloud and k8s = Scalability
+- k8s and cloud load balncing allows instant scale-up
+  - auto-scaling pods
+  - services scale separately: 
+    - workers! (owners are scheduling classes) 
+    - more webclients! (customers are booking appts)
+- automated integration, load tests
+- Canary deployments!
+
+* Appendix
+[[http://spinnaker-ui.poc.mindbodyonline.com/#/projects/poc%20Dev-%3EProd/applications/webclient/clusters][Spinnaker webclient clusters]]
+[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-dev?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][webclient-dev]]
+[[https://console.cloud.google.com/kubernetes/deployment/us-central1-f/poc-v1/default/webclient-prod?project=architects-181717&organizationId=356924664297&tab=details&duration=P1D&deployment_active_revisions_tablesize=50&pod_summary_list_tablesize=20][webclient-prod]]
